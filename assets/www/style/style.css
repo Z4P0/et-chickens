@@ -2,6 +2,9 @@
  * base styles
  */
 body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   font: 100% "Helvetica Neue", Verdana, Arial, sans-serif;
   line-height: 1.4;
@@ -15,15 +18,19 @@ body {
   margin: 0 auto;
 }
 
-.cf:before, .chickens:before,
+.cf:before, .chickens li:before,
 .cf:after,
-.chickens:after {
+.chickens li:after {
   content: " ";
   display: table;
 }
 
-.cf:after, .chickens:after {
+.cf:after, .chickens li:after {
   clear: both;
+}
+
+.inline, .inline li {
+  display: inline-block;
 }
 
 p {
@@ -45,6 +52,16 @@ ul {
   padding: 1em;
 }
 
+header {
+  background-color: #333;
+  color: #ebebeb;
+  padding: 1em;
+}
+
+h1 {
+  margin: 0;
+}
+
 .content article {
   margin-bottom: 4em;
 }
@@ -55,14 +72,47 @@ ul {
   margin-bottom: 1em;
 }
 
+.chickens li {
+  padding-bottom: 0.875em;
+  border-bottom: 1px #cccccc solid;
+  margin-bottom: 1em;
+}
+.chickens li:last-child {
+  border-bottom: none;
+}
+.chickens article {
+  float: left;
+  width: 60%;
+}
+.chickens aside {
+  float: right;
+  width: 40%;
+}
+.chickens img {
+  float: left;
+}
 .chickens img, .chickens h3 {
   display: inline-block;
 }
 .chickens h3 {
   margin: 0;
 }
-.chickens aside {
-  float: right;
+.chickens h3 + p {
+  font-size: 0.75em;
+}
+
+.eggs_today {
+  margin-right: 0.5em;
+}
+
+.eggs_total {
+  font-size: 0.875em;
+}
+.eggs_total:before {
+  content: "(";
+}
+.eggs_total:after {
+  content: " total)";
 }
 
 /* cupid green (inspired by okcupid.com)

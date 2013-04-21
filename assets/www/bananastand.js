@@ -1,7 +1,12 @@
 var phase2 = (function () {
 	// alert("there's always money in the banana stand..");
 
-	// if (localStorage) alert('yes');
+	// is there user data?
+	if (localStorage.getItem('test')){
+		alert('yes');
+	} else {
+		userSetup();
+	}
 
 	// user setup
 	// userSetup();
@@ -28,11 +33,21 @@ function navigator() {
 
 
 function userSetup() {
-	var _user; // temp user
+	// show form
+	var form = document.getElementById('user_form');
+	// but hide it first
+	form.style.height = 0;
+	form.style.visibility = 'hidden';
+	// now show it
+	// form
+
+	var _user = {}; // user profile to store
 	_user.name = "Steve";
 	_user.chickens = true;
 	_user.coop = true;
+	_user.totalChickens = 0;
 
+	console.log(_user);
 }
 
 

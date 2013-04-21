@@ -1,0 +1,42 @@
+.chickens {
+	li {
+		@extend .cf;
+		padding-bottom: 0.875em;
+		border-bottom: 1px #ccc solid;
+		margin-bottom: 1em;
+		&:last-child { border-bottom: none;}
+	}
+	article {
+		// display: inline-block;
+		float: left;
+		width: 60%;
+	}
+	aside {
+		float: right;
+		width: 40%;
+	}
+	img {float: left;}
+	img, h3 {
+		display: inline-block;
+	}
+	h3 {
+		margin: 0;
+		+ p {
+			font-size: 0.75em;
+		}
+	}
+
+}
+.eggs_today {
+	margin-right: 0.5em;
+}
+.eggs_total {
+	// display: inline-block;
+	font-size: 0.875em;
+	&:before {
+		content: "(";
+	}
+	&:after {
+		content: " total)";
+	}
+}
