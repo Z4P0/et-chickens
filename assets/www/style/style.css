@@ -77,6 +77,10 @@ nav li {
   font-weight: bold;
 }
 
+#user_form {
+  background-color: #ebebeb;
+  padding: 1em;
+}
 #user_form p {
   margin-bottom: 0;
 }
@@ -92,13 +96,16 @@ nav li {
 #user_form li:nth-child(2) {
   float: right;
 }
-#user_form div:nth-child(3) {
-  width: 50%;
-  margin: 0 auto;
+#user_form div:last-child {
+  padding-bottom: 1em;
 }
 #user_form div {
-  border-bottom: 1px #cccccc solid;
+  border-bottom: 1px #dddddd dotted;
   margin-bottom: 1em;
+}
+
+.selected {
+  background-color: #8888ff !important;
 }
 
 .content aside ul {
