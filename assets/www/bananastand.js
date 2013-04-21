@@ -60,11 +60,25 @@ function addChicken() {
 	collectionOfChickens = localStorage.getItem('chickens');
 	var chickensObject = JSON.parse(collectionOfChickens);
 	//console.log(chickensObject.chickens);
+	
+	var chickenName = document.getElementById('ChickenNameField');
+	var chickenNameName = chickenName.value;
+	var chickenEgg = document.getElementById('ChickenEggField');
+	var chickenEggEgg = chickenEgg.value;
+	var chickenGen = document.getElementById('ChickenGenderField');
+	var chickenGenGen = chickenEgg.value;
+	if(chickenGenGen.length<1)
+	{
+		chickenGenGen = "Female"
+	}
+	var chickenHealth = document.getElementById('ChickenHealthField');
+	var chickenHealthHealth = chickenEgg.value;
+	
 	var newChicken = {
-						"name" : "Susan",
-						"total_eggs" : 220,
-						"gender" : "female",
-						"health" : "Good",
+						"name" : chickenNameName,
+						"total_eggs" : chickenEggEgg,
+						"gender" : chickenGenGen,
+						"health" : chickenHealthHealth,
 						"birthday" : "9/1/2010"
 					}
 	console.log(newChicken);
@@ -134,7 +148,7 @@ function listChicken(newChicken)
 	p2.appendChild(span2);
 
 	listElement.appendChild(li);
-	console.log(listElement);
+	//console.log(listElement);
 }
 
 // function navigator() {
