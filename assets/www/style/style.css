@@ -18,16 +18,17 @@ body {
   margin: 0 auto;
 }
 
-.cf:before, li:before, .chickens li:before, .chickens article:before,
+.cf:before, li:before, #user_form li:before, .chickens li:before, .chickens article:before,
 .cf:after,
 li:after,
+#user_form li:after,
 .chickens li:after,
 .chickens article:after {
   content: " ";
   display: table;
 }
 
-.cf:after, li:after, .chickens li:after, .chickens article:after {
+.cf:after, li:after, #user_form li:after, .chickens li:after, .chickens article:after {
   clear: both;
 }
 
@@ -61,10 +62,6 @@ h1 {
   margin: 0;
 }
 
-#user_form {
-  margin-bottom: 2em;
-}
-
 li article {
   float: left;
   width: 70%;
@@ -78,6 +75,30 @@ li aside {
 nav li {
   margin-right: 1em;
   font-weight: bold;
+}
+
+#user_form p {
+  margin-bottom: 0;
+}
+#user_form ul {
+  width: 100%;
+}
+#user_form li {
+  width: 40%;
+}
+#user_form li:nth-child(1) {
+  float: left;
+}
+#user_form li:nth-child(2) {
+  float: right;
+}
+#user_form div:nth-child(3) {
+  width: 50%;
+  margin: 0 auto;
+}
+#user_form div {
+  border-bottom: 1px #cccccc solid;
+  margin-bottom: 1em;
 }
 
 .content aside ul {
@@ -100,6 +121,9 @@ nav li {
   border-bottom: none;
   padding-bottom: 0;
   margin-bottom: 0;
+}
+.chickens li:hover {
+  cursor: pointer;
 }
 .chickens article {
   float: left;
@@ -141,6 +165,10 @@ nav li {
 .dashboard {
   padding: 1em;
   border: 1px solid #444444;
+}
+.dashboard li {
+  padding: 0.5em 0 0.5em;
+  border-bottom: 1px solid #cccccc;
 }
 
 /* cupid green (inspired by okcupid.com)

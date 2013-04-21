@@ -48,10 +48,6 @@ h1 {
 	margin: 0;
 }
 
-#user_form {
-	margin-bottom: 2em;
-}
-
 li {
 	@extend .cf;
 	article {
@@ -68,6 +64,25 @@ li {
 nav li {
 	margin-right: 1em;
 	font-weight: bold;
+}
+
+#user_form {
+	p {margin-bottom: 0; }
+	ul {width: 100%; }
+	li {
+		@extend .cf;
+		width: 40%;
+		&:nth-child(1) {float: left; }
+		&:nth-child(2) {float: right; }
+	}
+	div:nth-child(3) {
+		width: 50%;
+		margin: 0 auto;
+	}
+	div {
+		border-bottom: 1px #ccc solid;
+		margin-bottom: 1em;
+	}
 }
 
 

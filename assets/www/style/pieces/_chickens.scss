@@ -12,6 +12,9 @@
 			padding-bottom: 0;
 			margin-bottom: 0;
 		}
+		&:hover {
+			cursor: pointer;
+		}
 	}
 	article {
 		// display: inline-block;

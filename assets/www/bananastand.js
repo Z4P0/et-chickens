@@ -6,81 +6,71 @@ var phase2 = (function () {
 	if (localStorage.getItem('user') === null) userSetup(); // no user data. create it
 	else parseData(); // user data exists. populate html
 
-var test = 
-{
-	"chickens": {
-		"0001" : {
-			"name" : "Elaine",
-			"total_eggs" : 190,
-			"gender" : "female",
-			"health" : "Good",
-			"birthday" : "10/15/2006"
-		},
-		"0002" : {
-			"name" : "Claire",
-			"total_eggs" : 120
+	var test =
+	{
+		"chickens": {
+			"0001" : {
+				"name" : "Elaine",
+				"total_eggs" : 190,
+				"gender" : "female",
+				"health" : "Good",
+				"birthday" : "10/15/2006"
+			},
+			"0002" : {
+				"name" : "Claire",
+				"total_eggs" : 120
+			}
 		}
-	}
-};
+	};
 
-// console.log(test);
-
-// localStorage.setItem('chickens', JSON.stringify(test));
-
-
-// var CHICK = JSON.parse(localStorage.getItem('chickens'));
-// console.log(CHICK);
-
-// console.log(CHICK.chickens["0001"]);
-
-	// user setup
-	// userSetup();
 
 	// hook up buttons
-	var addChicken = document.getElementById('addChicken');
-	// addChicken.addEventListener('click', alert('thing'));
-	addListener(addChicken, 'click', _addChicken);
+	addListener(document.getElementById('addChicken'), 'click', addChicken);
 
 	// navigation
-	var page = navigator();
+	// var page = navigator();
 })();
 
-function _addChicken() {
+function addChicken() {
 	alert('addChicken');
 }
 
-function navigator() {
-	var here = document.getElementsByTagName('body')[0].id;
-	// console.log(here);
+// function navigator() {
+// 	var here = document.getElementsByTagName('body')[0].id;
+// 	// console.log(here);
 
-	// addClass('here') to matching <nav> li
-	var nav = document.getElementsByTagName('header')[0].getElementsByTagName('nav')[0].getElementsByTagName('li');
-	for (var i = 0; i < nav.length; i++) {
-		if (nav[i].firstChild.firstChild.nodeValue === here) addClass('here', nav[i]);
-	}
+// 	// addClass('here') to matching <nav> li
+// 	var nav = document.getElementsByTagName('header')[0].getElementsByTagName('nav')[0].getElementsByTagName('li');
+// 	for (var i = 0; i < nav.length; i++) {
+// 		if (nav[i].firstChild.firstChild.nodeValue === here) addClass('here', nav[i]);
+// 	}
 
-	return here;
-}
+// 	return here;
+// }
 
 
 function userSetup() {
 	// show form
 	var form = document.getElementById('user_form');
-	// but hide it first
-	// form.style.height = 0;
-	// form.style.visibility = 'hidden';
-	// now show it
-	// form
+	// i know.. innerHTML is gross
+	form.innerHTML = '<div> <p>Do you have chickens?</p> <ul class="inline"> <li class="button">Yes</li> <li class="button"><a href="guide/1.html">No</a></li> </ul> </div>';
 
-	var _user = {}; // user profile to store
-	_user.name = "Steve";
-	_user.chickens = true;
-	_user.coop = true;
-	_user.totalChickens = 0;
-
-	console.log(_user);
+	var firstQuestion = form.document.getElementsByClassName('button')[0];
+	addListener(firstQuestion, "click", question2);
 }
 
+function question2(e) {
+	console.log(e);
+
+	var _user = {}; // user profile to store
+			_user.name = "Steve";
+			_user.chickens = true;
+			_user.coop = true;
+			_user.totalChickens = 0;
+
+	console.log(_user);
+
+}
 
 function gallery() {
 	// set up the gallery page
