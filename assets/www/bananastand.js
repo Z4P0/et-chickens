@@ -1,5 +1,6 @@
 ﻿var phase2 = (function () {
 	// alert("there's always money in the banana stand..");
+	document.getElementById('user_form').style.display = 'none';
 
 
 	// is there user data?
@@ -42,7 +43,7 @@ function _addChicken() {
 		{
 			"chickens":
 			{
-				
+
 			}
 		};
 		localStorage.setItem('chickens', JSON.stringify(test));
@@ -91,23 +92,27 @@ function _addChicken() {
 function userSetup() {
 	// show form
 	var form = document.getElementById('user_form');
-	// i know.. innerHTML is gross
-	form.innerHTML = '<div> <p>Do you have chickens?</p> <ul class="inline"> <li class="button">Yes</li> <li class="button"><a href="guide/1.html">No</a></li> </ul> </div>';
-
-	var firstQuestion = form.document.getElementsByClassName('button')[0];
-	addListener(firstQuestion, "click", question2);
+	form.style.display = 'block';
+}
+function hideForm() {
+	var form = document.getElementById('user_form');
+	form.style.display = 'none';
 }
 
-function question2(e) {
-	console.log(e);
 
-	var _user = {}; // user profile to store
-			_user.name = "Steve";
-			_user.chickens = true;
-			_user.coop = true;
-			_user.totalChickens = 0;
 
-	console.log(_user);
+
+// parseData
+function parseData() {
+	alert('parseData');
+	localStorage.removeItem('user');
+	// fill chicken list
+	var chickens = localStorage.getItem('chickens');
+	// alert(chickens);
+	parseChickens();
+}
+
+function parseChickens() {
 
 }
 

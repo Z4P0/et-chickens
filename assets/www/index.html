@@ -16,9 +16,10 @@
       
       <nav>
       	<ul class="inline">
-      		<li><a href="#">Guide</a></li>
+      		<li><a href="guide/0.html">Guide</a></li>
       		<li><a href="#">Chickens</a></li>
       		<li><a href="#">Inventory</a></li>
+      		<li><a href="#">Settings</a></li>
       	</ul>
       </nav>
     </div>
@@ -27,26 +28,30 @@
   <section class="content">
     <div class="wrapper">
       <section id="user_form">
+      	<div>
+      		<p>What is your name? <br> <input type="text" name="name" id="username" placeholder="enter your name" onBlur="localStorage.setItem('user', document.getElementById('username').value);"></p><br>
+      	</div>
       	<!-- stuff -->
-<!--       	<div>
+      	<div>
     			<p>Do you have chickens?</p>
     			<ul class="inline">
-	      		<li class="button">Yes</li>
+	      		<li class="button" onClick="this.className+=' selected';">Yes</li>
 	      		<li class="button"><a href="guide/1.html">No</a></li>
     			</ul>      		
-      	</div> -->
+      	</div>
       	<!-- 2 -->
-<!--       	<div>
+      	<div>
     			<p>Do you have a chicken coop?</p>
     			<ul class="inline">
-	      		<li class="button">Yes</li>
-	      		<li class="button">No</li>      				
+	      		<li class="button" onClick="this.className+=' selected';">Yes</li>
+	      		<li class="button"><a href="guide/2.html">No</a></li>
     			</ul>
-      	</div> -->
+      	</div>
       	<!-- 3 -->
-<!-- 				<div>
-					<p class="button">Let's get started</p>
-				</div> -->
+				<div>
+					<p>Let's get started!</p>
+      		<p class="button" onClick="hideForm()">Next</p>					
+				</div>
       </section>
 
       <!-- stuff -->
@@ -77,42 +82,15 @@
 		  	</ul>
 		  	<!-- add new chicken -->
 		  	<p id="addChicken" class="button">+ Add New Chicken</p>
-		  </section>
-
-			
-
-			<section class="addChicken">
-				<ul>
-					<li>Name <br> <input type="text" placeholder="Enter a name for your chicken"></li>
-					<li>eggs to date</li>
-					<li>kilos fed to date</li>
-					<li>months old</li>
-					<li>gender</li>
-					<li>ID</li>
-				</ul>			
-			</section>
-
-
+		  </section>		
     </div>
   </section>
 
   <footer>
     <div class="wrapper">
-      &phi;
     </div>
   </footer>
 </div>
 <script src="bananastand.js"></script>
 </body>
 </html>
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<script src="index.js"></script>
-</head>
-<body>
-What's your name?
-<input id="name" value="" />
-<button onclick="sayhello()">say hello</button>
-</body>
-</html> -->

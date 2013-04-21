@@ -67,6 +67,8 @@ nav li {
 }
 
 #user_form {
+	background-color: #ebebeb;
+	padding: 1em;
 	p {margin-bottom: 0; }
 	ul {width: 100%; }
 	li {
@@ -75,17 +77,20 @@ nav li {
 		&:nth-child(1) {float: left; }
 		&:nth-child(2) {float: right; }
 	}
-	div:nth-child(3) {
-		width: 50%;
-		margin: 0 auto;
+	div:last-child {
+		padding-bottom: 1em;
+		// width: 50%;
+		// margin: 0 auto;
 	}
 	div {
-		border-bottom: 1px #ccc solid;
+		border-bottom: 1px #ddd dotted;
 		margin-bottom: 1em;
 	}
 }
 
-
+.selected {
+	background-color: #88f !important;
+}
 
 @import "pieces/guide";
 @import "pieces/chickens";
