@@ -1,6 +1,6 @@
 .content {
 	article {
-		margin-bottom: 4em;
+		// margin-bottom: 4em;
 	}
 	aside{
 		ul {
@@ -9,17 +9,5 @@
 		li {
 			margin-bottom: 1em;	
 		}
-	}
-}
-.chickens {
-	@extend .cf;
-	img, h3 {
-		display: inline-block;
-	}
-	h3 {
-		margin: 0;
-	}
-	aside {
-		float: right;
 	}
 }

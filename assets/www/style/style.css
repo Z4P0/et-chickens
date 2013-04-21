@@ -2,6 +2,9 @@
  * base styles
  */
 body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   font: 100% "Helvetica Neue", Verdana, Arial, sans-serif;
   line-height: 1.4;
@@ -15,15 +18,21 @@ body {
   margin: 0 auto;
 }
 
-.cf:before, .chickens:before,
+.cf:before, li:before, .chickens li:before, .chickens article:before,
 .cf:after,
-.chickens:after {
+li:after,
+.chickens li:after,
+.chickens article:after {
   content: " ";
   display: table;
 }
 
-.cf:after, .chickens:after {
+.cf:after, li:after, .chickens li:after, .chickens article:after {
   clear: both;
+}
+
+.inline, .inline li {
+  display: inline-block;
 }
 
 p {
@@ -45,9 +54,32 @@ ul {
   padding: 1em;
 }
 
-.content article {
-  margin-bottom: 4em;
+h1 {
+  background-color: #333;
+  color: #ebebeb;
+  padding: 1em;
+  margin: 0;
 }
+
+#user_form {
+  margin-bottom: 2em;
+}
+
+li article {
+  float: left;
+  width: 70%;
+}
+li aside {
+  float: right;
+  width: 30%;
+  text-align: right;
+}
+
+nav li {
+  margin-right: 1em;
+  font-weight: bold;
+}
+
 .content aside ul {
   margin-top: 4em;
 }
@@ -55,14 +87,60 @@ ul {
   margin-bottom: 1em;
 }
 
-.chickens img, .chickens h3 {
-  display: inline-block;
+.chickens {
+  border: 1px solid #777777;
+  padding: 1em;
+}
+.chickens li {
+  padding-bottom: 0.875em;
+  border-bottom: 1px #cccccc solid;
+  margin-bottom: 1em;
+}
+.chickens li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.chickens article {
+  float: left;
+  width: 70%;
+}
+.chickens aside {
+  float: right;
+  width: 30%;
+}
+.chickens img {
+  float: left;
+  margin-right: 0.75em;
 }
 .chickens h3 {
   margin: 0;
 }
-.chickens aside {
-  float: right;
+.chickens p {
+  font-size: 0.75em;
+}
+
+.stats {
+  text-align: right;
+}
+
+.eggs_today {
+  margin-right: 0.5em;
+}
+
+.eggs_total {
+  font-size: 0.875em;
+}
+.eggs_total:before {
+  content: "(";
+}
+.eggs_total:after {
+  content: " total)";
+}
+
+.dashboard {
+  padding: 1em;
+  border: 1px solid #444444;
 }
 
 /* cupid green (inspired by okcupid.com)

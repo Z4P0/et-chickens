@@ -2,7 +2,7 @@
  * base styles
  */
 body {
-  -webkit-font-smoothing: antialiased;
+	-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;  -webkit-font-smoothing: antialiased;
   font: 100% "Helvetica Neue", Verdana, Arial, sans-serif;
   line-height: 1.4;
   color: #333;
@@ -21,6 +21,9 @@ body {
 .cf:after {
   clear: both;
 }
+.inline, .inline li {
+	display: inline-block;
+}
 p {
 	margin: 0 0 1em;
 }
@@ -38,8 +41,40 @@ ul {
 	padding: 1em;
 }
 
-@import "pieces/guide";
+h1 {
+	background-color: #333;
+	color: #ebebeb;
+	padding: 1em;
+	margin: 0;
+}
 
+#user_form {
+	margin-bottom: 2em;
+}
+
+li {
+	@extend .cf;
+	article {
+		float: left;
+		width: 70%;
+	}
+	aside {
+		float: right;
+		width: 30%;
+		text-align: right;
+	}
+}
+
+nav li {
+	margin-right: 1em;
+	font-weight: bold;
+}
+
+
+
+@import "pieces/guide";
+@import "pieces/chickens";
+@import "pieces/dashboard";
 
 /* cupid green (inspired by okcupid.com)
 *******************************************************************************/
