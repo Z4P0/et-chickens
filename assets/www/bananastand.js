@@ -4,8 +4,10 @@
 
 	// is there user data?
 	if (localStorage.getItem('user') === null) userSetup(); // no user data. create it
-	else parseData(); // user data exists. populate html
+	 // user data exists. populate html
 
+	parseChickens();
+	
 	var test =
 	{
 		"chickens": {
@@ -23,7 +25,6 @@
 		}
 	};
 
-
 	// hook up buttons
 	addListener(document.getElementById('addChicken'), 'click', addChicken);
 
@@ -32,9 +33,7 @@
 })();
 
 
-function _addChicken() {
-	//alert('addChicken');
-
+function addChicken() {
 	if (localStorage.getItem('chickens') === null)
 	{
 		//alert('Chickens not found');
@@ -60,7 +59,7 @@ function _addChicken() {
 	
 	collectionOfChickens = localStorage.getItem('chickens');
 	var chickensObject = JSON.parse(collectionOfChickens);
-	console.log(chickensObject.chickens);
+	//console.log(chickensObject.chickens);
 	var newChicken = {
 						"name" : "Susan",
 						"total_eggs" : 220,
@@ -70,8 +69,72 @@ function _addChicken() {
 					}
 	console.log(newChicken);
 	chickensObject.chickens[count] = newChicken;
-	console.log(chickensObject.chickens);
+	//console.log(chickensObject.chickens);
 	localStorage.setItem('chickens', JSON.stringify(chickensObject));
+
+	listChicken(newChicken);
+	
+}
+
+function parseChickens()
+{
+	if (localStorage.getItem('chickens') === null)
+	{
+		console.log('no chickens');
+	}
+	else
+	{
+		collectionOfChickens = localStorage.getItem('chickens');
+		var chickensObject = JSON.parse(collectionOfChickens);
+		var chickList = chickensObject.chickens
+		//console.log(chickList);
+		
+		for(var k in chickList)
+		{
+		   //console.log(chickList[k]);
+		   listChicken(chickList[k]);
+		}
+	}
+}
+
+function listChicken(newChicken)
+{
+	var listElement = document.getElementsByClassName('chickens')[0];
+	var li = document.createElement("li");
+	var article = document.createElement("article");
+	li.appendChild(article);
+	var img = document.createElement("img");
+	img.src = "http://lorempixel.com/50/50";
+	article.appendChild(img);
+	var h3 = document.createElement("h3");
+	h3.innerHTML = newChicken.name;
+	article.appendChild(h3);
+	var p = document.createElement("p");
+	p.className = "last_fed";
+	p.innerHTML = "Last fed: April 21, 2013";
+	article.appendChild(p);
+	var aside = document.createElement("aside");
+	aside.className = "stats";
+	li.appendChild(aside);
+	var span = document.createElement("span");
+	span.className = "eggs_today";
+	span.innerHTML = "1";
+	aside.appendChild(span);
+	var span2 = document.createElement("span");
+	span2.className = "eggs_total";
+	span2.innerHTML = newChicken.total_eggs;
+	aside.appendChild(span2);
+	var p2 = document.createElement("p");
+	p2.className = "health_status";
+	p2.innerHTML = "Health: ";
+	aside.appendChild(p2);
+	var span2 = document.createElement("span");
+	span2.className = "health_status";
+	span2.innerHTML = "Good"
+	p2.appendChild(span2);
+
+	listElement.appendChild(li);
+	console.log(listElement);
 }
 
 // function navigator() {
@@ -94,8 +157,8 @@ function userSetup() {
 	// i know.. innerHTML is gross
 	form.innerHTML = '<div> <p>Do you have chickens?</p> <ul class="inline"> <li class="button">Yes</li> <li class="button"><a href="guide/1.html">No</a></li> </ul> </div>';
 
-	var firstQuestion = form.document.getElementsByClassName('button')[0];
-	addListener(firstQuestion, "click", question2);
+	//var firstQuestion = form.document.getElementsByClassName('button')[0];
+	//addListener(firstQuestion, "click", question2);
 }
 
 function question2(e) {
