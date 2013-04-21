@@ -1,4 +1,4 @@
-var phase2 = (function () {
+﻿var phase2 = (function () {
 	// alert("there's always money in the banana stand..");
 
 
@@ -46,7 +46,45 @@ var test =
 })();
 
 function _addChicken() {
-	alert('addChicken');
+	//alert('addChicken');
+
+	if (localStorage.getItem('chickens') === null)
+	{
+		//alert('Chickens not found');
+		var test = 
+		{
+			"chickens":
+			{
+				
+			}
+		};
+		localStorage.setItem('chickens', JSON.stringify(test));
+
+	}
+
+	if (localStorage.getItem('count') === null)
+	{
+		localStorage.setItem('count',10);
+	}
+	
+	var count = localStorage.getItem('count');
+	count++;
+	localStorage.setItem('count',count);
+	
+	collectionOfChickens = localStorage.getItem('chickens');
+	var chickensObject = JSON.parse(collectionOfChickens);
+	console.log(chickensObject.chickens);
+	var newChicken = {
+						"name" : "Susan",
+						"total_eggs" : 220,
+						"gender" : "female",
+						"health" : "Good",
+						"birthday" : "9/1/2010"
+					}
+	console.log(newChicken);
+	chickensObject.chickens[count] = newChicken;
+	console.log(chickensObject.chickens);
+	localStorage.setItem('chickens', JSON.stringify(chickensObject));
 }
 
 function navigator() {
