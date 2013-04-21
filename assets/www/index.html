@@ -15,12 +15,12 @@
       <h1>ETChickens</h1>
       
       <nav>
-      	<ul class="inline">
-      		<li><a href="guide/0.html">Guide</a></li>
-      		<li><a href="#">Chickens</a></li>
-      		<li><a href="#">Inventory</a></li>
-      		<li><a href="#">Settings</a></li>
-      	</ul>
+        <ul class="inline">
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="guide/1.html">Guide</a></li>
+          <li><a href="#">Inventory</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -28,6 +28,7 @@
   <section class="content">
     <div class="wrapper">
       <section id="user_form">
+        <h2>It looks like this is your first time!</h2>
       	<div>
       		<p>What is your name? <br> <input type="text" name="name" id="username" placeholder="enter your name" onBlur="localStorage.setItem('user', document.getElementById('username').value);"></p><br>
       	</div>
@@ -49,7 +50,7 @@
       	</div>
       	<!-- 3 -->
 				<div>
-					<p>Let's get started!</p>
+					<p>Great, let's get started!</p>
       		<p class="button" onClick="hideForm()">Next</p>					
 				</div>
       </section>

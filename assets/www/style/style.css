@@ -79,7 +79,8 @@ nav li {
 
 #user_form {
   background-color: #ebebeb;
-  padding: 1em;
+  padding: 1em 1em 0;
+  margin-bottom: 2em;
 }
 #user_form p {
   margin-bottom: 0;
@@ -97,7 +98,10 @@ nav li {
   float: right;
 }
 #user_form div:last-child {
+  text-align: center;
   padding-bottom: 1em;
+  width: 50%;
+  margin: 0 auto;
 }
 #user_form div {
   border-bottom: 1px #dddddd dotted;
@@ -176,6 +180,13 @@ nav li {
 .dashboard li {
   padding: 0.5em 0 0.5em;
   border-bottom: 1px solid #cccccc;
+}
+
+#settings article {
+  text-align: center;
+}
+#settings article p {
+  margin: 1em auto;
 }
 
 /* cupid green (inspired by okcupid.com)

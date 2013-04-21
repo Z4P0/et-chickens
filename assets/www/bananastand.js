@@ -5,32 +5,12 @@
 
 	// is there user data?
 	if (localStorage.getItem('user') === null) userSetup(); // no user data. create it
-	 // user data exists. populate html
+	else parseData();// user data exists. populate html
 
-	parseChickens();
-	
-	var test =
-	{
-		"chickens": {
-			"0001" : {
-				"name" : "Elaine",
-				"total_eggs" : 190,
-				"gender" : "female",
-				"health" : "Good",
-				"birthday" : "10/15/2006"
-			},
-			"0002" : {
-				"name" : "Claire",
-				"total_eggs" : 120
-			}
-		}
-	};
+	// parseChickens(); // this gets called in parseData
 
 	// hook up buttons
 	addListener(document.getElementById('addChicken'), 'click', addChicken);
-
-	// navigation
-	// var page = navigator();
 })();
 
 
@@ -138,19 +118,6 @@ function listChicken(newChicken)
 	console.log(listElement);
 }
 
-// function navigator() {
-// 	var here = document.getElementsByTagName('body')[0].id;
-// 	// console.log(here);
-
-// 	// addClass('here') to matching <nav> li
-// 	var nav = document.getElementsByTagName('header')[0].getElementsByTagName('nav')[0].getElementsByTagName('li');
-// 	for (var i = 0; i < nav.length; i++) {
-// 		if (nav[i].firstChild.firstChild.nodeValue === here) addClass('here', nav[i]);
-// 	}
-
-// 	return here;
-// }
-
 
 function userSetup() {
 	// show form
@@ -161,9 +128,6 @@ function hideForm() {
 	var form = document.getElementById('user_form');
 	form.style.display = 'none';
 }
-
-
-
 
 // parseData
 function parseData() {
@@ -177,6 +141,12 @@ function parseData() {
 
 function parseChickens() {
 
+}
+
+function clearData() {
+	if (localStorage.getItem('user')) localStorage.removeItem('user');
+	if (localStorage.getItem('chickens')) localStorage.removeItem('chickens');
+	alert('data has been cleared');
 }
 
 function gallery() {

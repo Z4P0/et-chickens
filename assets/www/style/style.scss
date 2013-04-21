@@ -68,7 +68,8 @@ nav li {
 
 #user_form {
 	background-color: #ebebeb;
-	padding: 1em;
+	padding: 1em 1em 0;
+	margin-bottom: 2em;
 	p {margin-bottom: 0; }
 	ul {width: 100%; }
 	li {
@@ -78,9 +79,10 @@ nav li {
 		&:nth-child(2) {float: right; }
 	}
 	div:last-child {
+		text-align: center;
 		padding-bottom: 1em;
-		// width: 50%;
-		// margin: 0 auto;
+		width: 50%;
+		margin: 0 auto;
 	}
 	div {
 		border-bottom: 1px #ddd dotted;
@@ -95,6 +97,14 @@ nav li {
 @import "pieces/guide";
 @import "pieces/chickens";
 @import "pieces/dashboard";
+
+#settings article{
+	text-align: center;
+	p {
+		// width: 90%;
+		margin: 1em auto;
+	}
+}
 
 /* cupid green (inspired by okcupid.com)
 *******************************************************************************/
