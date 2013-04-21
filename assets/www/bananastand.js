@@ -159,7 +159,7 @@ function gallery() {
 	// 1. addeventlisteners
 	// a. categories
 	var categories = document.getElementsByClassName('categories')[0].getElementsByTagName('input');
-	 (var i = 0; i < categories.length; i++) {
+	for (var i = 0; i < categories.length; i++) {
 		addListener(categories[i], 'change', category_selection);
 		if (categories[i].checked) addClass('selected', categories[i].parentNode);
 	}
