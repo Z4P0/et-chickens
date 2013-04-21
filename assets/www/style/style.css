@@ -15,26 +15,63 @@ body {
   margin: 0 auto;
 }
 
+.cf:before, .chickens:before,
+.cf:after,
+.chickens:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after, .chickens:after {
+  clear: both;
+}
+
 p {
   margin: 0 0 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.disclaimer {
+  background-color: #ccc;
+  padding: 1em;
+}
+
+.content article {
+  margin-bottom: 4em;
+}
+.content aside ul {
+  margin-top: 4em;
+}
+.content aside li {
+  margin-bottom: 1em;
+}
+
+.chickens img, .chickens h3 {
+  display: inline-block;
+}
+.chickens h3 {
+  margin: 0;
+}
+.chickens aside {
+  float: right;
 }
 
 /* cupid green (inspired by okcupid.com)
 *******************************************************************************/
 .button {
-  background-color: #7fbf4d;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
-  background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
-  background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
-  background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
-  background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
-  background-image: linear-gradient(top, #7fbf4d, #63a62f);
-  border: 1px solid #63a62f;
-  border-bottom: 1px solid #5b992b;
+  background-color: #ccc;
   border-radius: 3px;
   -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
   box-shadow: inset 0 1px 0 0 #96ca6d;
-  color: #fff;
   font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   padding: 0.725em;
   text-align: center;
@@ -43,14 +80,6 @@ p {
 }
 
 .button:hover {
-  background-color: #76b347;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #76b347), color-stop(100%, #5e9e2e));
-  background-image: -webkit-linear-gradient(top, #76b347, #5e9e2e);
-  background-image: -moz-linear-gradient(top, #76b347, #5e9e2e);
-  background-image: -ms-linear-gradient(top, #76b347, #5e9e2e);
-  background-image: -o-linear-gradient(top, #76b347, #5e9e2e);
-  background-image: linear-gradient(top, #76b347, #5e9e2e);
-  -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
   box-shadow: inset 0 1px 0 0 #8dbf67;
   cursor: pointer;
 }

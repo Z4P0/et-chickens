@@ -1,5 +1,5 @@
 var phase2 = (function () {
-	alert("there's always money in the banana stand..");
+	// alert("there's always money in the banana stand..");
 
 	// if (localStorage) alert('yes');
 
@@ -33,7 +33,6 @@ function userSetup() {
 	_user.chickens = true;
 	_user.coop = true;
 
-	
 }
 
 
