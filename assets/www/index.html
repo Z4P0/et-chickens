@@ -15,6 +15,11 @@
       <h1>ETChickens</h1>
       
       <nav>
+      	<ul class="inline">
+      		<li><a href="#">Guide</a></li>
+      		<li><a href="#">Chickens</a></li>
+      		<li><a href="#">Inventory</a></li>
+      	</ul>
       </nav>
     </div>
   </header>
@@ -41,13 +46,15 @@
 
       <!-- stuff -->
 		  <section>
-		  	<h2>Dashboard</h2>
-				<!-- dashboard -->
-		  	<ul class="dashboard">
-		  		<li># of Chickens: 12</li>
-		  		<li>Egg Production: [enter]</li>
-		  		<li>Weather forecast</li>
-		  	</ul>
+		  	<section class="dashboard">
+					<h2>Dashboard</h2>
+					<!-- dashboard -->
+			  	<ul>
+			  		<li><article># of Chickens:</article><aside>12</aside></li>
+			  		<li><article>Egg Production:</article><aside>24</aside> </li>
+			  		<li><article>Weather forecast:</article><aside>It's gon rain</aside> </li>
+			  	</ul>		  		
+		  	</section>
 		  	
 		  	<!-- chicken roll call -->
 		  	<ul class="chickens">
@@ -55,38 +62,19 @@
 		  			<article>
 			  			<img src="http://lorempixel.com/50/50">
 			  			<h3>Elaine</h3>
-			  			<p>Health: <span class="health_status">Good</span></p>
+			  			<p class="last_fed">Last fed: April 21, 2013</p>
 		  			</article>
 		  			<aside class="stats">
-		  				<span class="eggs_today">2</span><span class="eggs_total">39</span></aside>
-		  		</li>
-		  		<li>
-		  			<img src="http://lorempixel.com/50/50">
-		  			<h3>Name</h3>
-		  			<aside class="stats">2 (39)</aside>
-		  		</li>
-		  		<li>
-		  			<img src="http://lorempixel.com/50/50">
-		  			<h3>Name</h3>
-		  			<aside class="stats">2 (39)</aside>
-		  		</li>
-		  		<li>
-		  			<img src="http://lorempixel.com/50/50">
-		  			<h3>Name</h3>
-		  			<aside class="stats">2 (39)</aside>
-		  		</li>
-		  		<li>
-		  			<img src="http://lorempixel.com/50/50">
-		  			<h3>Name</h3>
-		  			<aside class="stats">2 (39)</aside>
-		  		</li>
-		  		<li>
-		  			<img src="http://lorempixel.com/50/50">
-		  			<h3>Name</h3>
-		  			<aside class="stats">2 (39)</aside>
+		  				<span class="eggs_today">2</span><span class="eggs_total">39</span>
+			  			<p>Health: <span class="health_status">Good</span></p>
+		  			</aside>
 		  		</li>
 		  	</ul>
+		  	<!-- add new chicken -->
+		  	<p id="addChicken" class="button">+ Add New Chicken</p>
 		  </section>
+
+			
 
 			<section class="addChicken">
 				<ul>

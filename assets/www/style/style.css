@@ -18,14 +18,16 @@ body {
   margin: 0 auto;
 }
 
-.cf:before, .chickens li:before,
+.cf:before, li:before, .chickens li:before, .chickens article:before,
 .cf:after,
-.chickens li:after {
+li:after,
+.chickens li:after,
+.chickens article:after {
   content: " ";
   display: table;
 }
 
-.cf:after, .chickens li:after {
+.cf:after, li:after, .chickens li:after, .chickens article:after {
   clear: both;
 }
 
@@ -52,19 +54,32 @@ ul {
   padding: 1em;
 }
 
-header {
+h1 {
   background-color: #333;
   color: #ebebeb;
   padding: 1em;
-}
-
-h1 {
   margin: 0;
 }
 
-.content article {
-  margin-bottom: 4em;
+#user_form {
+  margin-bottom: 2em;
 }
+
+li article {
+  float: left;
+  width: 70%;
+}
+li aside {
+  float: right;
+  width: 30%;
+  text-align: right;
+}
+
+nav li {
+  margin-right: 1em;
+  font-weight: bold;
+}
+
 .content aside ul {
   margin-top: 4em;
 }
@@ -72,6 +87,10 @@ h1 {
   margin-bottom: 1em;
 }
 
+.chickens {
+  border: 1px solid #777777;
+  padding: 1em;
+}
 .chickens li {
   padding-bottom: 0.875em;
   border-bottom: 1px #cccccc solid;
@@ -79,26 +98,30 @@ h1 {
 }
 .chickens li:last-child {
   border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 .chickens article {
   float: left;
-  width: 60%;
+  width: 70%;
 }
 .chickens aside {
   float: right;
-  width: 40%;
+  width: 30%;
 }
 .chickens img {
   float: left;
-}
-.chickens img, .chickens h3 {
-  display: inline-block;
+  margin-right: 0.75em;
 }
 .chickens h3 {
   margin: 0;
 }
-.chickens h3 + p {
+.chickens p {
   font-size: 0.75em;
+}
+
+.stats {
+  text-align: right;
 }
 
 .eggs_today {
@@ -113,6 +136,11 @@ h1 {
 }
 .eggs_total:after {
   content: " total)";
+}
+
+.dashboard {
+  padding: 1em;
+  border: 1px solid #444444;
 }
 
 /* cupid green (inspired by okcupid.com)

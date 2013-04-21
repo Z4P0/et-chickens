@@ -41,17 +41,40 @@ ul {
 	padding: 1em;
 }
 
-header {
+h1 {
 	background-color: #333;
 	color: #ebebeb;
 	padding: 1em;
-}
-h1 {
 	margin: 0;
 }
 
+#user_form {
+	margin-bottom: 2em;
+}
+
+li {
+	@extend .cf;
+	article {
+		float: left;
+		width: 70%;
+	}
+	aside {
+		float: right;
+		width: 30%;
+		text-align: right;
+	}
+}
+
+nav li {
+	margin-right: 1em;
+	font-weight: bold;
+}
+
+
+
 @import "pieces/guide";
 @import "pieces/chickens";
+@import "pieces/dashboard";
 
 /* cupid green (inspired by okcupid.com)
 *******************************************************************************/

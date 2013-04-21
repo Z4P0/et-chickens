@@ -1,22 +1,53 @@
 var phase2 = (function () {
 	// alert("there's always money in the banana stand..");
 
+
 	// is there user data?
-	if (localStorage.getItem('test')){
-		alert('yes');
-	} else {
-		userSetup();
+	if (localStorage.getItem('user') === null) userSetup(); // no user data. create it
+	else parseData(); // user data exists. populate html
+
+var test = 
+{
+	"chickens": {
+		"0001" : {
+			"name" : "Elaine",
+			"total_eggs" : 190,
+			"gender" : "female",
+			"health" : "Good",
+			"birthday" : "10/15/2006"
+		},
+		"0002" : {
+			"name" : "Claire",
+			"total_eggs" : 120
+		}
 	}
+};
+
+// console.log(test);
+
+// localStorage.setItem('chickens', JSON.stringify(test));
+
+
+// var CHICK = JSON.parse(localStorage.getItem('chickens'));
+// console.log(CHICK);
+
+// console.log(CHICK.chickens["0001"]);
 
 	// user setup
 	// userSetup();
 
+	// hook up buttons
+	var addChicken = document.getElementById('addChicken');
+	// addChicken.addEventListener('click', alert('thing'));
+	addListener(addChicken, 'click', _addChicken);
+
 	// navigation
 	var page = navigator();
-
-	// do stuff depending on what page it is
-	// if (page === "gallery") gallery();
 })();
+
+function _addChicken() {
+	alert('addChicken');
+}
 
 function navigator() {
 	var here = document.getElementsByTagName('body')[0].id;
@@ -36,8 +67,8 @@ function userSetup() {
 	// show form
 	var form = document.getElementById('user_form');
 	// but hide it first
-	form.style.height = 0;
-	form.style.visibility = 'hidden';
+	// form.style.height = 0;
+	// form.style.visibility = 'hidden';
 	// now show it
 	// form
 

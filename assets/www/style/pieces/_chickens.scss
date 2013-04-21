@@ -1,31 +1,48 @@
 .chickens {
+	border: 1px solid #777;
+	padding: 1em;
+
 	li {
 		@extend .cf;
 		padding-bottom: 0.875em;
 		border-bottom: 1px #ccc solid;
 		margin-bottom: 1em;
-		&:last-child { border-bottom: none;}
+		&:last-child { 
+			border-bottom: none;
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
 	}
 	article {
 		// display: inline-block;
 		float: left;
-		width: 60%;
+		width: 70%;
+		@extend .cf;
 	}
 	aside {
 		float: right;
-		width: 40%;
+		width: 30%;
 	}
-	img {float: left;}
-	img, h3 {
-		display: inline-block;
+	img {
+		float: left;
+		margin-right: 0.75em;
 	}
 	h3 {
 		margin: 0;
-		+ p {
-			font-size: 0.75em;
-		}
 	}
+	// img, h3 {
+	// 	display: inline-block;
+	// }
+	// h3 {
+	// 	margin: 0;
+	p {
+		font-size: 0.75em;
+	}
+	// }
 
+}
+.stats {
+	text-align: right;
 }
 .eggs_today {
 	margin-right: 0.5em;
