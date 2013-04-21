@@ -1,6 +1,5 @@
 ﻿var phase2 = (function () {
 	// alert("there's always money in the banana stand..");
-	document.getElementById('user_form').style.display = 'none';
 
 
 	// is there user data?
@@ -22,7 +21,7 @@ function addChicken() {
 		{
 			"chickens":
 			{
-
+				
 			}
 		};
 		localStorage.setItem('chickens', JSON.stringify(test));
@@ -41,11 +40,25 @@ function addChicken() {
 	collectionOfChickens = localStorage.getItem('chickens');
 	var chickensObject = JSON.parse(collectionOfChickens);
 	//console.log(chickensObject.chickens);
+	
+	var chickenName = document.getElementById('ChickenNameField');
+	var chickenNameName = chickenName.value;
+	var chickenEgg = document.getElementById('ChickenEggField');
+	var chickenEggEgg = chickenEgg.value;
+	var chickenGen = document.getElementById('ChickenGenderField');
+	var chickenGenGen = chickenEgg.value;
+	if(chickenGenGen.length<1)
+	{
+		chickenGenGen = "Female"
+	}
+	var chickenHealth = document.getElementById('ChickenHealthField');
+	var chickenHealthHealth = chickenEgg.value;
+	
 	var newChicken = {
-						"name" : "Susan",
-						"total_eggs" : 220,
-						"gender" : "female",
-						"health" : "Good",
+						"name" : chickenNameName,
+						"total_eggs" : chickenEggEgg,
+						"gender" : chickenGenGen,
+						"health" : chickenHealthHealth,
 						"birthday" : "9/1/2010"
 					}
 	console.log(newChicken);
@@ -115,33 +128,24 @@ function listChicken(newChicken)
 	p2.appendChild(span2);
 
 	listElement.appendChild(li);
-	console.log(listElement);
+	//console.log(listElement);
 }
 
-
+// show form
 function userSetup() {
-	// show form
-	var form = document.getElementById('user_form');
-	form.style.display = 'block';
+	document.getElementById('user_form').style.display = 'block';
 }
 function hideForm() {
-	var form = document.getElementById('user_form');
-	form.style.display = 'none';
+	document.getElementById('user_form').style.display = 'none';
 }
 
 // parseData
 function parseData() {
-	alert('parseData');
-	localStorage.removeItem('user');
 	// fill chicken list
 	var chickens = localStorage.getItem('chickens');
-	// alert(chickens);
 	parseChickens();
 }
 
-function parseChickens() {
-
-}
 
 function clearData() {
 	if (localStorage.getItem('user')) localStorage.removeItem('user');
@@ -155,7 +159,7 @@ function gallery() {
 	// 1. addeventlisteners
 	// a. categories
 	var categories = document.getElementsByClassName('categories')[0].getElementsByTagName('input');
-	for (var i = 0; i < categories.length; i++) {
+	 (var i = 0; i < categories.length; i++) {
 		addListener(categories[i], 'change', category_selection);
 		if (categories[i].checked) addClass('selected', categories[i].parentNode);
 	}
